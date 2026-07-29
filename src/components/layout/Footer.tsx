@@ -19,12 +19,12 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-16 pb-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Brand Column */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 flex flex-col items-center sm:items-start text-center sm:text-left">
             <Link href="/" className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand to-brand-dark flex items-center justify-center">
                 <span className="text-white font-bold text-lg">A</span>
               </div>
-              <div>
+              <div className="text-left">
                 <span className="text-base font-bold text-foreground block">
                   Amaze PMS
                 </span>
@@ -39,7 +39,7 @@ export function Footer() {
               with 15000+ strong workforce, partnering with 200+ leading clients
               PAN India.
             </p>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center sm:justify-start gap-3">
               <motion.a
                 href="https://www.facebook.com/AMAZEPMS/"
                 target="_blank"
@@ -83,11 +83,11 @@ export function Footer() {
           </div>
 
           {/* Menu */}
-          <div>
+          <div className="text-center sm:text-left">
             <h4 className="text-sm font-semibold text-foreground mb-4 tracking-wide">
               Menu
             </h4>
-            <ul className="space-y-3">
+            <ul className="flex flex-col items-center sm:items-start space-y-3">
               {FOOTER_LINKS.menu.map((link) => (
                 <li key={link.label}>
                   <Link
@@ -102,11 +102,11 @@ export function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="text-center sm:text-left">
             <h4 className="text-sm font-semibold text-foreground mb-4 tracking-wide">
               Quick Links
             </h4>
-            <ul className="space-y-3">
+            <ul className="flex flex-col items-center sm:items-start space-y-3">
               {FOOTER_LINKS.quickLinks.map((link) => (
                 <li key={link.label}>
                   <Link
@@ -121,18 +121,18 @@ export function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="text-center sm:text-left">
             <h4 className="text-sm font-semibold text-foreground mb-4 tracking-wide">
               Contact
             </h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
+            <ul className="flex flex-col items-center sm:items-start space-y-4">
+              <li className="flex items-start justify-center sm:justify-start gap-3">
                 <MapPin className="w-4 h-4 text-brand mt-0.5 shrink-0" />
                 <span className="text-sm text-muted leading-relaxed">
                   4th Floor, High Mark Chambers, Khairatabad, Hyderabad - 500004
                 </span>
               </li>
-              <li className="flex items-center gap-3">
+              <li className="flex items-center justify-center sm:justify-start gap-3">
                 <Phone className="w-4 h-4 text-brand shrink-0" />
                 <a
                   href="tel:9100649137"
@@ -141,7 +141,7 @@ export function Footer() {
                   910 064 9137
                 </a>
               </li>
-              <li className="flex items-center gap-3">
+              <li className="flex items-center justify-center sm:justify-start gap-3">
                 <Mail className="w-4 h-4 text-brand shrink-0" />
                 <a
                   href="mailto:info@amazepms.com"
@@ -155,12 +155,12 @@ export function Footer() {
         </div>
 
         {/* Divider & Copyright */}
-        <div className="mt-14 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-14 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-4 text-center sm:text-left">
           <p className="text-xs text-muted-foreground">
             Copyright © {currentYear} Amaze Property Management Solutions Pvt Ltd. All Rights
             Reserved.
           </p>
-          <div className="flex items-center gap-2 text-xs text-muted-foreground">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 text-xs text-muted-foreground">
             <span>Our Presence:</span>
             {FOOTER_LINKS.presence.map((state, i) => (
               <span key={state}>

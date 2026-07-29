@@ -46,7 +46,7 @@ export function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }}
       >
-        <nav className="mx-auto max-w-7xl px-6 lg:px-8 flex items-center justify-between">
+        <nav className="w-full px-4 lg:px-8 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group relative h-10 w-48 transition-transform duration-300 hover:scale-[1.02]">
             <Image 
@@ -65,40 +65,43 @@ export function Navbar() {
             />
           </Link>
 
-          {/* Desktop Links */}
-          <div className="hidden lg:flex items-center gap-1">
-            {NAV_LINKS.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`relative whitespace-nowrap px-1.5 lg:px-2 xl:px-3 py-2 text-[13px] xl:text-sm font-medium transition-colors duration-300 group ${
-                    isActive ? "text-brand-light font-semibold" : "text-muted hover:text-foreground"
-                  }`}
-                >
-                  {link.label}
-                  <span
-                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-brand rounded-full transition-all duration-300 ${
-                      isActive ? "w-6" : "w-0 group-hover:w-6"
+          {/* Desktop Right Side (Links + CTA) */}
+          <div className="hidden lg:flex items-center gap-8">
+            {/* Desktop Links */}
+            <div className="flex items-center gap-1">
+              {NAV_LINKS.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`relative whitespace-nowrap px-1.5 lg:px-2 xl:px-3 py-2 text-[13px] xl:text-sm font-medium transition-colors duration-300 group ${
+                      isActive ? "text-brand-light font-semibold" : "text-muted hover:text-foreground"
                     }`}
-                  />
-                </Link>
-              );
-            })}
-          </div>
+                  >
+                    {link.label}
+                    <span
+                      className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-brand rounded-full transition-all duration-300 ${
+                        isActive ? "w-6" : "w-0 group-hover:w-6"
+                      }`}
+                    />
+                  </Link>
+                );
+              })}
+            </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-3">
-            <ThemeToggle />
-            <Button
-              variant="primary"
-              size="sm"
-              href="/contact"
-              icon={<ArrowRight className="w-4 h-4" />}
-            >
-              Get Started
-            </Button>
+            {/* Desktop CTA */}
+            <div className="flex items-center gap-3">
+              <ThemeToggle />
+              <Button
+                variant="primary"
+                size="sm"
+                href="/contact"
+                icon={<ArrowRight className="w-4 h-4" />}
+              >
+                Get Started
+              </Button>
+            </div>
           </div>
 
           {/* Mobile Controls */}
