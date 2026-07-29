@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CheckCircle2, Users, Globe, Award } from "lucide-react";
 
@@ -11,7 +12,7 @@ const highlights = [
   },
   {
     icon: Globe,
-    text: "300+ clients from diverse industries",
+    text: "200+ clients from diverse industries",
   },
   {
     icon: Award,
@@ -44,19 +45,10 @@ export function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <p className="text-muted leading-relaxed mb-5">
-                Amaze PMS Pvt Ltd (AMAZE) is a Property Management division of
-                ACTION GROUP of Companies, founded in the year 2001 by Mr.
-                Subhash Abdul — a veteran from the Indian Navy, a Certified
-                Security Practitioner, and a renowned name in the service
-                industry.
+                Amaze PMS Pvt Ltd (AMAZE) is a Property Management division of ACTION GROUP of Companies founded in the year 2001 by Mr. Subhani Abdul a veteran from the Indian Navy, a Certified Security Practitioner, and a renowned name in the Service Industry.
               </p>
               <p className="text-muted leading-relaxed mb-8">
-                Amaze has its Head Quarters in Hyderabad, Telangana — PAN INDIA,
-                providing Property Management Solutions to leading clientele with
-                a 15,000+ strong strength of professionals. We specialize in
-                offering comprehensive Integrated Property Management Services
-                such as Housekeeping, MEP, Horticulture, Security, Pest Control,
-                Swimming Pool Maintenance, and more.
+                Amaze has its Head Quarters in Cyberabad, Telangana - INDIA, providing Property Management Solutions PAN INDIA, partnering with leading clientele with 15000 + strong strength of professionals. We specialize in offering comprehensive integrated Property Management Services such as Housekeeping, MEP (Mechanical, Electrical, Plumbing), Security, Pest Control, Gardening, STP & WTP, Parking, Swimming Pool Maintenance, office support services, deep cleaning services etc all these services are inhouse.
               </p>
             </motion.div>
 
@@ -82,80 +74,66 @@ export function About() {
             </div>
           </div>
 
-          {/* Right Column - Visual */}
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
-          >
-            <div className="relative aspect-square max-w-lg mx-auto">
-              {/* Abstract geometric composition */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand/10 to-brand-dark/10 border border-border" />
-
-              {/* Floating cards */}
-              <motion.div
-                className="absolute top-8 left-8 right-8 p-6 rounded-2xl glass"
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand to-brand-dark flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">AG</span>
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold text-foreground">
-                      Action Group
-                    </div>
-                    <div className="text-xs text-muted">Estd. 2001</div>
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="p-3 rounded-xl bg-surface-elevated">
-                    <div className="text-lg font-bold text-brand-light">20M+</div>
-                    <div className="text-xs text-muted">Sq. ft. Managed</div>
-                  </div>
-                  <div className="p-3 rounded-xl bg-surface-elevated">
-                    <div className="text-lg font-bold text-accent-emerald">PAN</div>
-                    <div className="text-xs text-muted">India Presence</div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Check badges */}
-              <motion.div
-                className="absolute bottom-12 left-8 right-8 p-5 rounded-2xl glass"
-                animate={{ y: [0, 6, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              >
-                <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
-                  Our Standards
-                </div>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-accent-emerald" />
-                    <span className="text-sm text-foreground/80">Site-specific SOPs & Checklists</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-accent-emerald" />
-                    <span className="text-sm text-foreground/80">Regular Audits & Reports</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-accent-emerald" />
-                    <span className="text-sm text-foreground/80">Yearly Training Programs</span>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Decorative dots */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 grid grid-cols-4 gap-1.5 opacity-20">
-                {Array.from({ length: 16 }).map((_, i) => (
-                  <div key={i} className="w-1.5 h-1.5 rounded-full bg-brand" />
-                ))}
-              </div>
+          {/* Right Column - Visual Images */}
+          <div className="relative h-[450px] sm:h-[550px] w-full max-w-lg mx-auto lg:max-w-none mt-10 lg:mt-0">
+            {/* Decorative Background Element */}
+            <div className="absolute -inset-4 sm:-inset-8 border border-border/40 rounded-[3rem] -rotate-6 bg-surface-glass/20 pointer-events-none" />
+            
+            {/* Decorative dots top left */}
+            <div className="absolute -top-8 -left-8 w-24 h-24 grid grid-cols-4 gap-2 opacity-30 z-0">
+              {Array.from({ length: 16 }).map((_, i) => (
+                <div key={i} className="w-1.5 h-1.5 rounded-full bg-brand" />
+              ))}
             </div>
-          </motion.div>
+
+            {/* Image 2 (Logo/Shield - Background/Top Right) */}
+            <motion.div
+              className="absolute top-0 right-0 w-[70%] h-[75%] rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.5)] z-0 bg-surface-elevated cursor-pointer"
+              initial={{ opacity: 0, x: 20, y: -20 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              whileHover={{ scale: 1.04, zIndex: 20, transition: { duration: 0.5, ease: "easeOut" } }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
+            >
+              <div className="absolute inset-0 bg-black/10 z-10 hover:bg-transparent transition-colors duration-500 pointer-events-none" />
+              <Image 
+                src="/about.png" 
+                alt="Action Group Logo" 
+                fill
+                className="object-cover saturate-[0.9]"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </motion.div>
+
+            {/* Image 1 (Group Photo - Foreground/Bottom Left) */}
+            <motion.div
+              className="absolute bottom-0 left-0 w-[70%] h-[75%] rounded-3xl overflow-hidden border border-white/20 shadow-[0_30px_60px_-15px_rgba(79,70,229,0.5)] ring-1 ring-black/5 z-10 cursor-pointer"
+              initial={{ opacity: 0, x: -20, y: 20 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              whileHover={{ scale: 1.04, zIndex: 20, transition: { duration: 0.5, ease: "easeOut" } }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] as const }}
+            >
+              {/* Vignette & Cinematic Overlay */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_10%,rgba(0,0,0,0.6)_100%)] z-10 pointer-events-none opacity-80 hover:opacity-40 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-brand-light/20 z-10 mix-blend-overlay opacity-50 pointer-events-none" />
+              
+              <Image 
+                src="/about1.png" 
+                alt="Amaze PMS Team" 
+                fill
+                className="object-cover contrast-[1.1] saturate-[1.05] brightness-95"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </motion.div>
+
+            {/* Decorative dots bottom right */}
+            <div className="absolute -bottom-8 -right-8 w-24 h-24 grid grid-cols-4 gap-2 opacity-30 z-0 hidden sm:grid">
+              {Array.from({ length: 16 }).map((_, i) => (
+                <div key={i} className="w-1.5 h-1.5 rounded-full bg-brand" />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

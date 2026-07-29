@@ -25,6 +25,17 @@ const RELIABLE_IMAGES = [
   "https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?auto=format&fit=crop&q=80&w=1200", // Security
 ];
 
+const TEAM_IMAGES = [
+  { src: "/images/gallery/corporate.png", title: "Corporate Facility Team" },
+  { src: "/images/gallery/security.png", title: "Security Personnel" },
+  { src: "/images/gallery/housekeeping.png", title: "Housekeeping Staff" },
+  { src: "/images/gallery/training.png", title: "Staff Training Session" },
+  { src: "/images/gallery/engineering.png", title: "Engineering & MEP Team" },
+  { src: "/images/gallery/management.png", title: "Management Team" },
+  { src: "/images/gallery/sanitization.png", title: "Sanitization Experts" },
+  { src: "/images/gallery/briefing.png", title: "Operations Briefing" }
+];
+
 export default function GalleryPage() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center" });
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -109,32 +120,53 @@ export default function GalleryPage() {
             {RELIABLE_IMAGES.map((src, i) => (
               <motion.div 
                 key={i}
-                className="relative rounded-2xl overflow-hidden group cursor-pointer break-inside-avoid"
+                className="relative rounded-2xl overflow-hidden group cursor-pointer break-inside-avoid transition-opacity duration-500 transform-gpu"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={src} alt={`Grid Image ${i}`} className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <Maximize2 className="w-8 h-8 text-white" />
+                <img src={src} alt={`Grid Image ${i}`} className="block w-full h-auto object-cover transform-gpu group-hover:scale-105 transition-transform duration-700 ease-out will-change-transform" loading="lazy" />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                  <Maximize2 className="w-8 h-8 text-white transform-gpu scale-50 group-hover:scale-100 transition-transform duration-500" />
                 </div>
               </motion.div>
             ))}
-             {RELIABLE_IMAGES.slice().reverse().map((src, i) => (
+          </div>
+        </div>
+      </section>
+
+      {/* Team Gallery Grid */}
+      <section className="py-24 bg-background border-t border-border relative overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <SectionHeading badge="Our Workforce" title="The Team Behind" titleHighlight="The Excellence" align="center" className="mb-16" />
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {TEAM_IMAGES.map((image, i) => (
               <motion.div 
-                key={`rev-${i}`}
-                className="relative rounded-2xl overflow-hidden group cursor-pointer break-inside-avoid"
-                initial={{ opacity: 0, y: 20 }}
+                key={i}
+                className="relative group rounded-2xl overflow-hidden aspect-[4/5] bg-surface-elevated border border-border cursor-pointer shadow-sm transition-opacity duration-500 transform-gpu"
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={src} alt={`Grid Image rev ${i}`} className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <Maximize2 className="w-8 h-8 text-white" />
+                <img 
+                  src={image.src} 
+                  alt={image.title} 
+                  className="block w-full h-full object-cover transform-gpu group-hover:scale-105 transition-transform duration-700 ease-out will-change-transform" 
+                  loading="lazy" 
+                />
+                
+                {/* Premium Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                {/* Text Content */}
+                <div className="absolute inset-x-0 bottom-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <div className="w-8 h-1 bg-brand mb-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100" />
+                  <h3 className="text-white font-bold text-lg leading-snug">{image.title}</h3>
                 </div>
               </motion.div>
             ))}

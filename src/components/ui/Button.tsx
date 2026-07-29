@@ -2,6 +2,7 @@
 
 import { forwardRef } from "react";
 import { motion, type HTMLMotionProps } from "framer-motion";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 type ButtonVariant = "primary" | "secondary" | "ghost" | "outline";
@@ -34,42 +35,57 @@ const sizeStyles: Record<ButtonSize, string> = {
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", size = "md", icon, children, href, ...props }, ref) => {
     const classes = cn(
-      "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-300 cursor-pointer select-none",
+      "group inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 cursor-pointer select-none hover:scale-[1.03] active:scale-[0.97]",
       variantStyles[variant],
       sizeStyles[size],
       className
     );
 
-    if (href) {
-      return (
-        <motion.a
-          href={href}
-          className={classes}
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.97 }}
-          transition={{ type: "spring", stiffness: 400, damping: 25 }}
-        >
+    const content = (
+      <div className="relative overflow-hidden flex items-center justify-center">
+        <span className="flex items-center gap-2 transform transition-transform duration-[600ms] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-[150%]">
           {icon}
           {children}
+        </span>
+        <span className="absolute inset-0 flex items-center justify-center gap-2 transform transition-transform duration-[600ms] ease-[cubic-bezier(0.19,1,0.22,1)] translate-y-[150%] group-hover:translate-y-0">
+          {icon}
+          {children}
+        </span>
+      </div>
+    );
+
+    if (href) {
+      const isAnchor = href.startsWith("#");
+      
+      if (isAnchor) {
+        return (
+          <a href={href} className={classes}>
+            {content}
+            {variant === "primary" && (
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700 pointer-events-none" />
+            )}
+          </a>
+        );
+      }
+
+      return (
+        <Link href={href} className={classes}>
+          {content}
           {variant === "primary" && (
-            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] hover:translate-x-[200%] transition-transform duration-700" />
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700 pointer-events-none" />
           )}
-        </motion.a>
+        </Link>
       );
     }
 
     return (
-      <motion.button
+      <button
         ref={ref}
         className={classes}
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.97 }}
-        transition={{ type: "spring", stiffness: 400, damping: 25 }}
         {...props}
       >
-        {icon}
-        {children}
-      </motion.button>
+        {content}
+      </button>
     );
   }
 );

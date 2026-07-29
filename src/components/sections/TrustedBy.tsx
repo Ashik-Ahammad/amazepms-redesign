@@ -14,7 +14,7 @@ export function TrustedBy() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Trusted by 300+ leading organizations across India
+          Trusted by 200+ leading organizations across India
         </motion.p>
 
         <div className="relative overflow-hidden">

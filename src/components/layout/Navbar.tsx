@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
@@ -38,8 +39,8 @@ export function Navbar() {
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? "glass-strong py-3"
-            : "bg-transparent py-5"
+            ? "bg-background/30 backdrop-blur-3xl saturate-200 border-b border-transparent shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] py-3 dark:bg-background/10 dark:shadow-[0_10px_40px_-10px_rgba(255,255,255,0.02)]"
+            : "bg-transparent border-b border-transparent py-5 shadow-none"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -47,19 +48,21 @@ export function Navbar() {
       >
         <nav className="mx-auto max-w-7xl px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-brand to-brand-dark flex items-center justify-center overflow-hidden">
-              <span className="text-white font-bold text-lg tracking-tight">A</span>
-              <div className="absolute inset-0 bg-gradient-to-t from-transparent to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-base font-bold tracking-tight text-foreground">
-                Amaze
-              </span>
-              <span className="text-[10px] font-medium tracking-widest uppercase text-muted-foreground -mt-0.5">
-                Property Management
-              </span>
-            </div>
+          <Link href="/" className="flex items-center gap-3 group relative h-10 w-48 transition-transform duration-300 hover:scale-[1.02]">
+            <Image 
+              src="/nav-dark-logo.png" 
+              alt="Amaze PMS" 
+              fill
+              className="object-contain object-left block dark:hidden"
+              priority
+            />
+            <Image 
+              src="/nav-logo.png" 
+              alt="Amaze PMS" 
+              fill
+              className="object-contain object-left hidden dark:block"
+              priority
+            />
           </Link>
 
           {/* Desktop Links */}

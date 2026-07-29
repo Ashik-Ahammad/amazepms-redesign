@@ -4,6 +4,36 @@ import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown, Building2, Shield, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { STATS } from "@/constants";
+import { useEffect } from "react";
+import { useMotionValue, useTransform, animate } from "framer-motion";
+
+function AnimatedStat({ value, label }: { value: string; label: string }) {
+  const numMatches = value.match(/\d+/);
+  const targetNum = numMatches ? parseInt(numMatches[0], 10) : 0;
+  const suffix = value.replace(/\d+/g, "");
+
+  const count = useMotionValue(0);
+  const display = useTransform(count, (latest) => 
+    Math.round(latest).toLocaleString() + suffix
+  );
+
+  useEffect(() => {
+    if (targetNum > 0) {
+      const controls = animate(count, targetNum, { 
+        duration: 2.5, 
+        ease: "easeOut", 
+        delay: 1.5 
+      });
+      return controls.stop;
+    }
+  }, [targetNum, count]);
+
+  return (
+    <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient-brand tracking-tight">
+      {targetNum > 0 ? <motion.span>{display}</motion.span> : value}
+    </div>
+  );
+}
 
 const containerVariants = {
   hidden: {},
@@ -77,7 +107,7 @@ export function Hero() {
           >
             <span className="w-2 h-2 rounded-full bg-accent-emerald animate-pulse" />
             <span className="text-xs sm:text-sm font-medium text-muted">
-              Trusted by 300+ partners across India
+              Trusted by 200+ partners across India
             </span>
           </motion.div>
 
@@ -133,7 +163,7 @@ export function Hero() {
             >
               Explore Services
             </Button>
-            <Button variant="secondary" size="lg" href="#about">
+            <Button variant="secondary" size="lg" href="/about">
               Learn More
             </Button>
           </motion.div>
@@ -153,9 +183,7 @@ export function Hero() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 1.3 + i * 0.1 }}
               >
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient-brand tracking-tight">
-                  {stat.value}
-                </div>
+                <AnimatedStat value={stat.value} label={stat.label} />
                 <div className="mt-1 text-xs sm:text-sm text-muted-foreground font-medium uppercase tracking-wider">
                   {stat.label}
                 </div>

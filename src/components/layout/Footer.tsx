@@ -15,56 +15,8 @@ export function Footer() {
 
   return (
     <footer id="contact" className="relative border-t border-border bg-surface">
-      {/* CTA Banner */}
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <motion.div
-          className="relative -mt-16 rounded-2xl bg-gradient-to-r from-brand-dark via-brand to-brand-light p-8 sm:p-12 overflow-hidden"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
-        >
-          {/* Decorative circles */}
-          <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-white/10 blur-3xl -translate-y-1/2 translate-x-1/4" />
-          <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-white/5 blur-2xl translate-y-1/2 -translate-x-1/4" />
-
-          <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div>
-              <div className="flex items-center gap-3 mb-2">
-                <Phone className="w-5 h-5 text-white/80" />
-                <span className="text-white/80 text-sm font-medium">
-                  Call For More Info
-                </span>
-              </div>
-              <a
-                href="tel:9908538137"
-                className="text-2xl sm:text-3xl font-bold text-white tracking-tight"
-              >
-                990 853 8137
-              </a>
-            </div>
-
-            <div className="text-center sm:text-left">
-              <h3 className="text-xl sm:text-2xl font-bold text-white">
-                Call Us For Our Services
-              </h3>
-            </div>
-
-            <motion.a
-              href="tel:9908538137"
-              className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-white text-brand-dark font-semibold text-sm hover:bg-white/90 transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Contact Us
-              <ArrowUpRight className="w-4 h-4" />
-            </motion.a>
-          </div>
-        </motion.div>
-      </div>
-
       {/* Footer Content */}
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-20 pb-10">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-16 pb-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-2">
@@ -84,12 +36,14 @@ export function Footer() {
             <p className="text-muted text-sm leading-relaxed mb-6 max-w-sm">
               Amaze PMS Pvt Ltd (AMAZE) is a Property Management division of
               ACTION GROUP of Companies. A renowned name in the service industry
-              with 15000+ strong workforce, partnering with 300+ leading clients
+              with 15000+ strong workforce, partnering with 200+ leading clients
               PAN India.
             </p>
             <div className="flex items-center gap-3">
               <motion.a
-                href="#"
+                href="https://www.facebook.com/AMAZEPMS/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted hover:text-foreground hover:border-brand/40 transition-all"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -100,7 +54,9 @@ export function Footer() {
                 </svg>
               </motion.a>
               <motion.a
-                href="#"
+                href="https://www.instagram.com/amaze_pms/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted hover:text-foreground hover:border-brand/40 transition-all"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -111,7 +67,9 @@ export function Footer() {
                 </svg>
               </motion.a>
               <motion.a
-                href="#"
+                href="https://in.linkedin.com/company/amaze-pms"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted hover:text-foreground hover:border-brand/40 transition-all"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}

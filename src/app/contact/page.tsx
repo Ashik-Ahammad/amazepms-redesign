@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { Phone, Mail, MapPin, Clock, ShieldCheck } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const metadata: Metadata = {
   title: "Contact Us | Amaze Property Management",
@@ -92,6 +93,44 @@ export default function ContactPage() {
 
           {/* Right Column: Contact Form Component */}
           <ContactForm />
+        </div>
+
+        {/* Premium Map Section */}
+        <div className="mt-24 mb-10 relative">
+          <SectionHeading
+            badge="Location"
+            title="Find Us on"
+            titleHighlight="The Map"
+            align="center"
+            className="mb-12"
+          />
+          
+          <div className="relative w-full h-[500px] rounded-[2rem] overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] group">
+            {/* Edge Fades for seamless integration */}
+            <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-background to-transparent z-10 pointer-events-none opacity-50" />
+            <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none opacity-50" />
+            <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none opacity-50" />
+            <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none opacity-50" />
+            
+            {/* Interactive Overlay to prevent accidental scrolling while looking at the page */}
+            <div className="absolute inset-0 bg-background/10 backdrop-blur-[2px] z-20 transition-all duration-300 flex items-center justify-center opacity-100 group-hover:opacity-0 group-hover:pointer-events-none">
+              <div className="px-6 py-3 rounded-full bg-surface-glass-strong border border-border shadow-lg text-sm font-semibold flex items-center gap-2 text-foreground transform transition-transform duration-300 group-hover:scale-95">
+                <MapPin className="w-4 h-4 text-brand" />
+                Hover to interact with map
+              </div>
+            </div>
+
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4530.047296199675!2d78.3725816751661!3d17.439157883456883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93e7400a98af%3A0xb86a441596737d73!2sAMAZE%20Property%20Management%20Solutions%20Pvt.%20Ltd!5e1!3m2!1sen!2sbd!4v1785329289157!5m2!1sen!2sbd" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen={true} 
+              loading="lazy" 
+              referrerPolicy="strict-origin-when-cross-origin"
+              className="absolute inset-0 w-full h-full filter grayscale-[0.2] contrast-[1.05] opacity-90 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100"
+            />
+          </div>
         </div>
       </div>
     </main>

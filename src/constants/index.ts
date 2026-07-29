@@ -14,7 +14,7 @@ export const NAV_LINKS: NavLink[] = [
 
 export const STATS: StatItem[] = [
   { value: "15000+", label: "Workforce" },
-  { value: "300+", label: "Clients" },
+  { value: "200+", label: "Clients" },
   { value: "20M+", label: "Sq. ft. Managed" },
   { value: "PAN India", label: "Presence" },
 ];
@@ -85,35 +85,73 @@ export const TESTIMONIALS: TestimonialItem[] = [
     name: "Rajesh Kumar",
     role: "Director of Operations",
     company: "Mahindra World City",
-    content:
-      "Amaze PMS has completely transformed our facility management. Their team's dedication and professionalism is unmatched. The 24/7 security services give us complete peace of mind.",
+    content: "Amaze PMS completely transformed our facility management. Their team's dedication is unmatched, and the 24/7 security services give us total peace of mind.",
     avatar: "RK",
   },
   {
     name: "Priya Sharma",
     role: "Property Manager",
     company: "Golf View Residences",
-    content:
-      "Working with Amaze PMS has been exceptional. Their housekeeping and horticulture services maintain our property at the highest standards. Highly recommended.",
+    content: "Working with Amaze PMS has been exceptional. Their horticulture and deep cleaning services keep our luxury property looking pristine year-round.",
     avatar: "PS",
   },
   {
     name: "Anand Reddy",
     role: "Facilities Head",
     company: "CBRE South India",
-    content:
-      "The integrated approach of Amaze PMS—combining security, maintenance, and housekeeping—has streamlined our operations and significantly reduced costs.",
+    content: "The integrated approach of Amaze PMS—combining MEP, security, and housekeeping—has streamlined our operations and reduced our overhead costs.",
     avatar: "AR",
+  },
+  {
+    name: "Vikram Desai",
+    role: "Estate Manager",
+    company: "Lodha Group",
+    content: "Their responsiveness during emergencies is incredible. We rely on their MEP and fire safety teams exclusively across all our premium residential towers.",
+    avatar: "VD",
+  },
+  {
+    name: "Dr. Anjali Rao",
+    role: "Admin Head",
+    company: "Oliva Clinics",
+    content: "In the healthcare sector, hygiene is non-negotiable. Amaze's specialized sanitization and pest control protocols meet our highest clinical standards.",
+    avatar: "AR",
+  },
+  {
+    name: "Suresh Menon",
+    role: "VP Infrastructure",
+    company: "Wipro",
+    content: "Managing a 5-million sq. ft. campus is a massive challenge. Amaze PMS handles everything from STP operations to landscaping with flawless execution.",
+    avatar: "SM",
+  },
+  {
+    name: "Neha Gupta",
+    role: "Operations Manager",
+    company: "JLL India",
+    content: "We partnered with Amaze for facade cleaning and electro-mechanical maintenance. Their technical expertise and adherence to safety compliances are world-class.",
+    avatar: "NG",
+  },
+  {
+    name: "Amitabh Verma",
+    role: "Chief Engineer",
+    company: "DivyaSree TechPark",
+    content: "Their proactive maintenance approach to HVAC and plumbing systems has drastically reduced our downtime. Truly a reliable property management partner.",
+    avatar: "AV",
   },
 ];
 
 export const TRUSTED_CLIENTS: string[] = [
-  "Mahindra",
   "CBRE",
   "Golf View",
   "Kalpataru",
   "Wipro",
-  "Adani",
+  "Lodha",
+  "Oliva Skin & Hair",
+  "JLL",
+  "Mahindra Lifespaces",
+  "DivyaSree",
+  "L&T Technology Services",
+  "Hill County",
+  "Sri Sairam Towers",
 ];
 
 export const FOOTER_LINKS = {
@@ -134,6 +172,122 @@ export const FOOTER_LINKS = {
     "Andhra Pradesh",
     "Karnataka",
     "Tamil Nadu",
-    "Odisha",
   ],
 };
+
+export const ALL_SERVICES_EXTENDED = [
+  {
+    title: "Security Services",
+    description: "Trained security personnel and 24/7 monitoring for complete peace of mind.",
+    icon: "Shield",
+    image: "https://images.unsplash.com/photo-1760228604788-db8a36d5c1a3?q=80&w=1330&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "House Keeping Services",
+    description: "Professional cleaning and sanitation protocols for spotless environments.",
+    icon: "Sparkles",
+    image: "https://images.unsplash.com/photo-1603762299839-4b850c75e629?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Technical Services",
+    description: "Expert technical support and electrical maintenance for modern infrastructure.",
+    icon: "Wrench",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800",
+  },
+  {
+    title: "Pest Control",
+    description: "Eco-friendly and highly effective pest management solutions.",
+    icon: "Bug",
+    image: "https://images.unsplash.com/photo-1747659629851-a92bd71149f6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Help Desk Management",
+    description: "Responsive front-desk and help desk solutions for seamless operations.",
+    icon: "PhoneCall",
+    image: "https://images.unsplash.com/photo-1483058712412-4245e9b90334?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Gardening",
+    description: "Expert landscaping, horticulture, and sustainable green solutions.",
+    icon: "TreePine",
+    image: "https://images.unsplash.com/photo-1668189777890-495c36095340?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Swimming Pool Maintenance",
+    description: "Complete pool care, water treatment, and safety compliance.",
+    icon: "Waves",
+    image: "https://images.unsplash.com/photo-1605702755163-4f303492e55f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Club House Management",
+    description: "Luxury clubhouse operations, facility management, and member services.",
+    icon: "Building2",
+    image: "https://images.unsplash.com/photo-1699135801906-ad078d7a6e76?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Facade Cleaning",
+    description: "Professional high-rise facade cleaning and glass restoration.",
+    icon: "Droplets",
+    image: "https://images.unsplash.com/photo-1696416435086-35034f413bec?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Tenant Management",
+    description: "Comprehensive leasing, tenant screening, and relationship management.",
+    icon: "Key",
+    image: "https://images.unsplash.com/photo-1759428679273-11d914866394?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Home Repairs",
+    description: "Quick and reliable plumbing, electrical, and structural repairs.",
+    icon: "Hammer",
+    image: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Events and Promotions",
+    description: "End-to-end event planning, management, and promotional campaigns.",
+    icon: "Megaphone",
+    image: "https://images.unsplash.com/photo-1700514077430-3659e38eb5e7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Office Support Staff",
+    description: "Trained administrative, pantry, and backend support personnel.",
+    icon: "Users",
+    image: "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Payroll Management",
+    description: "Accurate, compliant, and timely payroll processing solutions.",
+    icon: "Calculator",
+    image: "https://images.unsplash.com/photo-1725258080098-727051947997?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Repair and Maintenance",
+    description: "Proactive mechanical and electrical (MEP) maintenance programs.",
+    icon: "Settings",
+    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800",
+  },
+  {
+    title: "Home Cleaning",
+    description: "Deep cleaning and sanitization services for residential properties.",
+    icon: "Home",
+    image: "https://images.unsplash.com/photo-1740657254989-42fe9c3b8cce?q=80&w=1312&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Maid Services",
+    description: "Verified and trained domestic help for daily household chores.",
+    icon: "UserCheck",
+    image: "https://images.unsplash.com/photo-1647381518264-97ff1835026f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Parking Management",
+    description: "Efficient parking operations, valet services, and traffic flow optimization.",
+    icon: "Car",
+    image: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=800",
+  },
+  {
+    title: "New Revenue Opportunities",
+    description: "Strategic asset monetization and property value enhancement consulting.",
+    icon: "TrendingUp",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800",
+  },
+];
