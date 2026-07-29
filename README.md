@@ -1,45 +1,44 @@
-# Amaze PMS - Premium Web Redesign
+# Amaze PMS - Modern Property Management Platform
 
-A world-class, highly animated, and premium front-end redesign for a property management website, built as a high-stakes hiring assignment submission.
-
-## 🌟 Live Demo
-[Insert Vercel/Netlify URL Here]
+A premium, highly interactive front-end redesign for a comprehensive property management website. This project focuses on delivering a world-class user experience with smooth animations, modern aesthetics, and responsive design.
 
 ## 🚀 Tech Stack
+
 - **Framework:** Next.js 14+ (App Router)
 - **Language:** TypeScript
-- **Styling:** Tailwind CSS (v4)
+- **Styling:** Tailwind CSS
 - **Animation:** Framer Motion
-- **Smooth Scroll:** Lenis (Studio Freight)
+- **Smooth Scroll:** Lenis
 - **Icons:** Lucide React
-- **Fonts:** Geist & Geist Mono
+- **Typography:** Geist & Geist Mono
 
-## ✨ Key Features & Highlights
-- **Premium Aesthetics:** Sleek dark mode and clean light mode built with a custom design system, glassmorphism, and ambient gradients.
-- **Micro-Interactions:** Magnetic buttons, smooth hover states, and meticulously timed stagger animations using Framer Motion.
-- **Lenis Smooth Scrolling:** Buttery-smooth page navigation that feels native and premium.
-- **Bento Grid Architecture:** Modern, responsive "Bento Box" layouts used for the core services display.
-- **Static & Semantic SEO:** Hardcoded FAQ (zero `.map()` arrays for accordions per instructions) and semantic HTML structures for optimal crawler visibility.
-- **Zero-Error Codebase:** Fully typed with strict TypeScript and 0 ESLint errors/warnings. 
+## ✨ Key Features
 
-## 📂 Folder Structure (Production-Grade)
+- **Modern UI/UX:** Clean, intuitive interface with carefully crafted light and dark modes, utilizing glassmorphism and modern design principles.
+- **Micro-Interactions:** Engaging hover states, smooth transitions, and staggered animations for a dynamic feel.
+- **Fluid Scrolling:** Implemented Lenis for a native-feeling, buttery-smooth scrolling experience across all devices.
+- **Responsive Architecture:** Built with modern layout techniques ensuring perfect display across mobile, tablet, and desktop viewports.
+- **Performance Optimized:** Semantic HTML, static optimizations, and strict TypeScript integration for a robust, fast, and SEO-friendly application.
+
+## 📂 Project Structure
+
 ```text
 src/
-├── app/                  # App router pages, layout, and global CSS
+├── app/                  # Next.js App router pages, layouts, and global styles
 ├── components/           
-│   ├── layout/           # Navbar, Footer, Lenis wrapper
-│   ├── sections/         # Hero, ServicesBento, Features, Faq, etc.
-│   ├── ui/               # Reusable UI elements (Button, ThemeToggle)
-├── lib/                  # Utility functions (tailwind merge, cn)
-├── constants/            # Static data configurations
-└── types/                # TypeScript interfaces
+│   ├── layout/           # Structural components (Navbar, Footer, Wrappers)
+│   ├── sections/         # Main page sections (Hero, Features, Services, etc.)
+│   ├── ui/               # Reusable atomic UI elements
+├── lib/                  # Utility functions and helpers
+├── constants/            # Application constants and static data
+└── types/                # TypeScript type definitions and interfaces
 ```
 
-## 🛠️ Setup Instructions
+## 🛠️ Local Development
 
 1. **Clone the repository:**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/Ashik-Ahammad/amazepms-redesign.git
    cd amazepms-redesign
    ```
 
@@ -52,13 +51,18 @@ src/
    pnpm install
    ```
 
-3. **Run the development server:**
+3. **Start the development server:**
    ```bash
    npm run dev
    ```
 
-4. **Open in browser:**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+4. **View the application:**
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 🎨 Design Philosophy
-Inspired by the clean aesthetics of Vercel, Apple, and Awwwards-winning sites, this redesign strips away generic corporate clutter. It introduces a bold, typography-driven Hero section, floating ambient elements, and interactive layouts that prioritize user engagement without sacrificing the core business purpose of facility management.
+## 🎨 Design System
+
+The redesign emphasizes typography, purposeful whitespace, and subtle visual cues. By minimizing visual clutter and focusing on core content delivery, the interface provides a premium feel that aligns with modern enterprise software standards while maintaining high user engagement.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
