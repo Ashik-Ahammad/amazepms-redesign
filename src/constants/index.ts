@@ -125,8 +125,8 @@ export const FOOTER_LINKS = {
   ],
   quickLinks: [
     { label: "Our Clients", href: "/clients" },
-    { label: "Recruitments", href: "/contact" },
-    { label: "Careers", href: "/contact" },
+    { label: "Recruitments", href: "/recruitments" },
+    { label: "Careers", href: "/careers" },
     { label: "Contact Us", href: "/contact" },
   ],
   presence: [
