@@ -169,7 +169,7 @@ export default function ClientsPage() {
                     ))}
                   </Pie>
                   <Tooltip 
-                    formatter={(value: number) => [`${value}%`, "Market Share"]}
+                    formatter={(value) => [`${value}%`, "Market Share"]}
                     contentStyle={{ backgroundColor: 'hsl(var(--surface))', borderColor: 'hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))' }}
                     itemStyle={{ fontWeight: 'bold' }}
                   />

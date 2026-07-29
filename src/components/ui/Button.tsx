@@ -79,13 +79,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     }
 
     return (
-      <button
+      <motion.button
         ref={ref}
         className={classes}
         {...props}
       >
         {content}
-      </button>
+      </motion.button>
     );
   }
 );
