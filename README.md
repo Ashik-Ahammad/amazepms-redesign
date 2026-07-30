@@ -63,6 +63,3 @@ src/
 
 The redesign emphasizes typography, purposeful whitespace, and subtle visual cues. By minimizing visual clutter and focusing on core content delivery, the interface provides a premium feel that aligns with modern enterprise software standards while maintaining high user engagement.
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

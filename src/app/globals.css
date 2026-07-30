@@ -167,3 +167,11 @@ body {
   background: var(--scrollbar-thumb);
   border-radius: 3px;
 }
+
+/* === Animations === */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
